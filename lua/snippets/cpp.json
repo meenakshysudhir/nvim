@@ -1,0 +1,190 @@
+{
+    "initcp": {
+        "prefix": "initcp",
+        "body": [
+            "/*",
+            "    author: https://codeforces.com/profile/krishnachandran",
+            "    text editor: NVIM v0.9.1",
+            "    compiler: GNU G++20 11.2.0 (64 bit,  winlibs)",
+            "*/",
+            "",
+            "#include <bits/stdc++.h>",
+            "",
+            "const char* BRIGHTYELLOW = \"\\033[1;93m\";",
+            "const char* RESETCOLOR = \"\\033[0m\";",
+            "",
+            "#define dbg(x) std::cout << BRIGHTYELLOW << \"\\n\" << #x << \" \" << x << RESETCOLOR << \"\\n\";",
+            "#define couts(x) std::cout << x << \" \";",
+            "#define coutn(x) std::cout << x << \"\\n\";",
+            "#define add(a, b, mod) ((a % mod) + (b % mod)) % mod",
+            "#define sub(a, b, mod) ((a % mod) - (b % mod)) % mod",
+            "#define mul(a, b, mod) ((a % mod) * (b % mod)) % mod",
+            "#define input_1d(a, n) for(long long i = 0; i < n; i++) std::cin >> a[i]",
+            "#define input_2d(a, r, c) for(long long i = 0; i < r; i++) for(long long j = 0; j < c; j++) std::cin >> a[i][j]",
+            "#define input_cn(a) for(auto &i: a) std::cin >> i",
+            "#define output_1d(a, n) for(long long i = 0; i < n; i++) std::cout << a[i] << \" \";",
+            "#define output_2d(a, r, c) for(long long i = 0; i < r; i++){for (long long j = 0; j < c; j++) std::cout << a[i][j] << \" \"; std::cout << \"\\n\";}",
+            "#define output_cn(a) for(auto &i: a) std::cout << i << \" \";",
+            "#define sz(x) (x).size()",
+            "#define fi first",
+            "#define se second",
+            "",
+            "typedef long long int ll;",
+            "typedef long double ld;",
+            "",
+            "const ll MAXN = 1e5 + 10;",
+            "const ll MOD = 998244353;",
+            "const long double PI = std::acos(-1.0);",
+            "",
+            "void solve(){",
+            "\t$0",
+            "}",
+            "",
+            "void tst(bool test_cases){",
+            "    int tst = 1; if(test_cases) std::cin >> tst; while(tst--) solve(); return;",
+            "}",
+            "",
+            "int main(int argc, char *argv[]){",
+            "    std::ios::sync_with_stdio(false); std::cin.tie(nullptr); std::cout.tie(nullptr);",
+            "    tst(true);",
+            "    return 0; ",
+            "}"
+        ],
+        "description": "Initialize Competitive Programming Template"
+    },
+    "Prime Sieve Algorithm": {
+        "prefix": "sieve",
+        "body": [
+            "int N = -1;",
+            "",
+            "std::vector<bool> is_prime(N+1, true);",
+            "",
+            "void sieve() {",
+            "\tis_prime[0] = is_prime[1] = false;",
+            "\t",
+            "\tfor (int i = 2; i <= N; i++) {",
+            "\t\tif (is_prime[i] && (long long)i * i <= N) {",
+            "\t\t\tfor (int j = i * i; j <= N; j += i)",
+            "\t\t\t\tis_prime[j] = false;",
+            "\t\t}",
+            "\t}",
+            "}"
+        ],
+        "description": "Generate a prime sieve algorithm"
+    },
+    "Binary Exponentiation": {
+        "prefix": "binexp",
+        "body": [
+            "long long binexp(long long a, long long b) {",
+            "\tlong long res = 1;",
+            "\twhile (b > 0) {",
+            "\t\tif (b & 1)",
+            "\t\t\tres = res * a;",
+            "\t\ta = a * a;",
+            "\t\tb >>= 1;",
+            "\t}",
+            "\treturn res;",
+            "}"
+        ],
+        "description": "Generate a binary exponentiation function"
+    },
+    "Modular Exponentiation": {
+        "prefix": "modexp",
+        "body": [
+            "long long modexp(long long a, long long b, long long m) {",
+            "\ta %= m;",
+            "\tlong long res = 1;",
+            "\twhile (b > 0) {",
+            "\t\tif (b & 1)",
+            "\t\t\tres = res * a % m;",
+            "\t\ta = a * a % m;",
+            "\t\tb >>= 1;",
+            "\t}",
+            "\treturn res;",
+            "}"
+        ],
+        "description": "Generate a modular exponentiation function"
+    },
+    "GCD (Greatest Common Divisor)": {
+        "prefix": "gcd",
+        "body": [
+            "ll gcd(long long a, long long b) {",
+            "\tif (b == 0) return a;",
+            "\treturn gcd(b, a % b);",
+            "}"
+        ],
+        "description": "Generate a function to compute the Greatest Common Divisor (GCD)"
+    },
+    "LCM (Least Common Multiple)": {
+        "prefix": "lcm",
+        "body": [
+            "ll gcd(long long a, long long b) {",
+            "\tif (b == 0) return a;",
+            "\treturn gcd(b, a % b);",
+            "}",
+            "",
+            "ll lcm(long long a, long long b) {",
+            "\treturn (a * b) / gcd(a, b);",
+            "}"
+        ],
+        "description": "Generate functions for computing GCD and LCM"
+    },
+    "Check Prime": {
+        "prefix": "isprime",
+        "body": [
+            "bool isprime(long long x) {",
+            "\tfor (long long i = 2; i * i <= x; i++) {",
+            "\t\tif (x % i == 0) {",
+            "\t\t\treturn false;",
+            "\t\t}",
+            "\t}",
+            "\treturn true;",
+            "}"
+        ],
+        "description": "Generate a function to check if a number is prime"
+    },
+    "Modular Function": {
+        "prefix": "modular",
+        "body": [
+            "ll md(long long x) {",
+            "\treturn x % mod;",
+            "}"
+        ],
+        "description": "Generate a function for modular operation"
+    },
+    "Competitive Programming Template": {
+        "prefix": "initminicp",
+        "body": [
+            "#include <bits/stdc++.h>",
+            "",
+            "const char* BRIGHTYELLOW = \"\\033[1;93m\";",
+            "const char* RESETCOLOR = \"\\033[0m\";",
+            "",
+            "#define dbg(x) std::cout << BRIGHTYELLOW << \"\\n\" << #x << \" \" << x << RESETCOLOR << \"\\n\";",
+            "",
+            "typedef long long int ll;",
+            "",
+            "const ll MOD = (ll)1e9 + 7;",
+            "",
+            "void solve() {",
+            "    return;",
+            "}",
+            "",
+            "int main() {",
+            "    ll t = 1;",
+            "    std::cin >> t;",
+            "    while (t--) solve();",
+            "}"
+        ],
+        "description": "Competitive programming template with debugging and MOD constant"
+    },
+    "Factorial Function": {
+        "prefix": "fact",
+        "body": [
+            "long long fact(long long n) {",
+            "    return std::llround(tgamma(static_cast<long double>(n + 1)));",
+            "}"
+        ],
+        "description": "Generate a function to compute the factorial of a number"
+    }
+}
