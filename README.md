@@ -23,7 +23,7 @@
 
     ```bash
     cd ~/.config &&
-    git clone -b main https://github.com/meenakshysudhir/Neovim-Config/nvim 
+    git clone -b main https://github.com/meenakshysudhir/nvim 
     ```
 
 3. **Run Neovim from Terminal:**
